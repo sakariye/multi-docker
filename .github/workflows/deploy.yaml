@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t sakariye/multi-client-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true sakariye/multi-client-test npm test
+      - run: docker build -t zyussuf/multi-client-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true zyussuf/multi-client-test npm test
  
-      - run: docker build -t sakariye/multi-client ./client
-      - run: docker build -t sakariye/multi-nginx ./nginx
-      - run: docker build -t sakariye/multi-server ./server
-      - run: docker build -t sakariye/multi-worker ./worker
+      - run: docker build -t zyussuf/multi-client ./client
+      - run: docker build -t zyussuf/multi-nginx ./nginx
+      - run: docker build -t zyussuf/multi-server ./server
+      - run: docker build -t zyussuf/multi-worker ./worker
  
-      - run: docker push sakariye/multi-client
-      - run: docker push sakariye/multi-nginx
-      - run: docker push sakariye/multi-server
-      - run: docker push sakariye/multi-worker
+      - run: docker push zyussuf/multi-client
+      - run: docker push zyussuf/multi-nginx
+      - run: docker push zyussuf/multi-server
+      - run: docker push zyussuf/multi-worker
       
